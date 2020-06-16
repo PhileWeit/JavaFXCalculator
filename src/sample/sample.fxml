@@ -1,0 +1,91 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.shape.Box?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import java.net.URL?>
+<BorderPane fx:controller="sample.Controller"
+            xmlns:fx="http://javafx.com/fxml"  >
+    <padding>
+       <Insets top="10" right="15" left="15" bottom="10"/>
+    </padding>
+
+<top  >
+    <VBox spacing="10">
+        <HBox>
+            <TextField prefHeight="35" prefColumnCount="30" fx:id="input" id="input"/>
+        </HBox>
+        <TextField prefHeight="30" prefColumnCount="30" fx:id="output" editable="false" id="output"/>
+       <HBox>
+
+           <Label text="Result: "/>
+           <TextField prefHeight="30" prefColumnCount="20" fx:id="result" editable="false" id="result" />
+
+       </HBox>
+
+        <HBox spacing="10" >
+            <padding>
+                <Insets top="10" right="15" left="15" bottom="10"/>
+            </padding>
+            <Button text="Cancel" fx:id="cancel" onAction="#handleEditCompleteAction"/>
+            <Button text="Delete" fx:id="delete" onAction="#handleEditCompleteAction"/>
+            <Button text="=" fx:id="equals" onAction="#handleEditCompleteAction" id="equalSign"/>
+        </HBox>
+    </VBox>
+
+</top>
+    <left>
+        <VBox spacing="15" >
+
+            <Button text="cos" fx:id="cosine" onAction="#handleSingleNumberAction"/>
+            <Button text="sin" fx:id="sine" onAction="#handleSingleNumberAction"/>
+            <Button text="tan" fx:id="tan" onAction="#handleSingleNumberAction"/>
+
+
+        </VBox>
+    </left>
+    <center>
+
+       <GridPane alignment="TOP_CENTER"  hgap="15"  vgap="15"  >
+
+           <Button text="1" GridPane.rowIndex="0" GridPane.columnIndex="0" fx:id="number1" onAction="#handleNumberAction"/>
+           <Button text="2" GridPane.rowIndex="0" GridPane.columnIndex="1" fx:id="number2" onAction="#handleNumberAction"/>
+           <Button text="3" GridPane.rowIndex="0" GridPane.columnIndex="2" fx:id="number3" onAction="#handleNumberAction"/>
+           <Button text="4" GridPane.rowIndex="0" GridPane.columnIndex="3" fx:id="number4" onAction="#handleNumberAction"/>
+           <Button text="5" GridPane.rowIndex="0" GridPane.columnIndex="4" fx:id="number5" onAction="#handleNumberAction"/>
+           <Button text="6" GridPane.rowIndex="1" GridPane.columnIndex="0" fx:id="number6" onAction="#handleNumberAction"/>
+           <Button text="7" GridPane.rowIndex="1" GridPane.columnIndex="1" fx:id="number7" onAction="#handleNumberAction"/>
+           <Button text="8" GridPane.rowIndex="1" GridPane.columnIndex="2" fx:id="number8" onAction="#handleNumberAction"/>
+           <Button text="9" GridPane.rowIndex="1" GridPane.columnIndex="3" fx:id="number9" onAction="#handleNumberAction"/>
+           <Button text="0" GridPane.rowIndex="1" GridPane.columnIndex="4" fx:id="number0" onAction="#handleNumberAction" />
+           <Button text="." GridPane.rowIndex="2" GridPane.columnIndex="0" fx:id="point" onAction="#handleNumberAction"/>
+           <!--must save the preceding number-->
+           <Button text="+"  GridPane.rowIndex="2" GridPane.columnIndex="1" fx:id="addition" onAction="#handleMathAction"/>
+           <Button text="-" GridPane.rowIndex="2" GridPane.columnIndex="2" fx:id="subtraction" onAction="#handleMathAction"/>
+           <Button text="/" GridPane.rowIndex="2" GridPane.columnIndex="3" fx:id="division" onAction="#handleMathAction"/>
+           <Button text="*" GridPane.rowIndex="2" GridPane.columnIndex="4" fx:id="multiplication" onAction="#handleMathAction"/>
+
+
+
+       </GridPane>
+    </center>
+    <right>
+        <VBox spacing="10">
+
+            <Button text="square" fx:id="square" onAction="#handleSingleNumberAction"/>
+            <Button text="cube root" fx:id="cuberoot" onAction="#handleSingleNumberAction"/>
+            <Button text="square root" fx:id="squareroot" onAction="#handleSingleNumberAction"/>
+        </VBox>
+    </right>
+
+    <stylesheets>
+        <URL value="@myFirstCSS.css"/>
+    </stylesheets>
+
+</BorderPane>
+
